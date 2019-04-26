@@ -4,135 +4,128 @@
     <meta charset="utf-8"></meta>
     <meta http-equiv="X-UA-compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
-    <title text="徐汇司法行政大数据门户"></title>
+    <title text="银江ENLOOP-HUB单点登录平台"></title>
     <link rel="shortcut icon" th:href="@{${#themes.code('exchange.ico.file')}}"/>
     <link rel="stylesheet" th:href="@{${#themes.code('exchange.css.file')}}"/>
     <!-- <link rel="stylesheet" href="../../static/themes/exchange/css/exchange.css"/> -->
 </head>
 <body class="pg-login">
-    <div class="bgContainer">
-        <div class="bgMask">
-            <div class="title">
-            </div>
-            <div class="content">
-                <form method="post" th:object="${credential}">
-                    <div class="formName" >
-                        用户登录
-                    </div>     
-                    <div class="login-frame">
-                        <section class="row" >  
-                            <div th:unless="${openIdLocalId}" class="bar-input" >
-                                <div class="icon icon-user"></div>
-                                <input class="required form-control"
-                                    placeholder="请输入用户名"
-                                    data-necessary="true" reservation="用户名"
-                                    id="username"
-                                    size="25"
-                                    tabindex="1"
-                                    type="text"
-                                    th:disabled="${guaEnabled}"
-                                    th:field="*{username}"
-                                    th:accesskey="#{screen.welcome.label.netid.accesskey}"
-                                    autocomplete="off"
-                                    onfocus="user_input_focus(this)"
-                                    onblur="user_input_blur(this)"
-                                    oninput="isShowClearBtn(this)"
-                                />
-                                <!-- <button onclick="clearUser(this)"  type="button" class="icon-delete" ></button> -->
-                                <a class="btn btn-gray-delete" onclick="clearUser(this)">&times;</a>
-                            </div>  
-                        </section>
-                        <section class="row">
-                            <div class="bar-input" >
-                                <i class="icon icon-lock"></i>
-                                <input class="required form-control"
-                                    placeholder="请输入密码"
-                                    data-necessary="true" reservation="密码"
-                                    type="password"
-                                    id="password"
-                                    size="25"
-                                    tabindex="2"
-                                    th:accesskey="#{screen.welcome.label.password.accesskey}"
-                                    th:field="*{password}"
-                                    autocomplete="off"
-                                    onfocus="lock_input_focus(this)"
-                                    onblur="lock_input_blur(this)"
-                                    oninput="isShowClearBtn(this)"
-                                />
-                                <a class="btn btn-gray-delete">&times;</a>
-                            </div>
-                        </section>
-                        <section style="height: 20px" >
-                            <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
-                            <input type="hidden" name="_eventId" value="submit"/>
-                            <input type="hidden" name="geolocation"/>
-                            <div class="bar-option" style="position:relative">
-                                <span class="btn1">
-                                    <input type="checkbox" id='remberPwd'>
-                                    <label for="remberPwd">
-                                        <div class="customCheckBox">
-                                            <div class="mark"></div>
-                                        </div>
-                                        记住密码
-                                    </label>
-                                </span> 
-                                <a class="btn2">忘记密码？</a>
-                            </div>
-                            <div th:if="${#fields.hasErrors('*')}" style="color: red;">
-                                <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"/>
-                            </div>
-                        </section>
-                    </div>
-            
-                            <div class="footer">
-                                <div class="login" title="请输入用户名和密码">
-                                        <input id="logining" class="btn btn-submit btn-block" title=""
-                                        name="submit"
-                                        accesskey="l" style="border: none;"
-                                        value="登录"
-                                        tabindex="6"
-                                        type="submit"
-                                    />
-                                </div>
-                            </div>
-                        </form>
-            </div>
-            <div class="copy-rights">
-                徐汇区司法局 Copyright © 2019
-            </div>          
+    <div class="top-content">
+        <div class="left">
+            <div class="left-title"></div>
         </div>
+        <div class="right">
+        <div class="m-login">
+            <div class="wrap-login">
+                    <div class="top">
+                        <div class="pic-user"></div>
+                        <div class="top-line"></div>
+                    </div>
+                    
+                    <form method="post" th:object="${credential}">
+                        
+                        <div class="login-frame">
+                            <section class="row">
+                                <div th:unless="${openIdLocalId}" class="bar-input" >
+                                    <i class="icon icon-user"></i>
+                                    <input class="required form-control"
+                                           placeholder="请输入用户名"
+                                           data-necessary="true" reservation="用户名"
+                                           id="username"
+                                           size="25"
+                                           tabindex="1"
+                                           type="text"
+                                           th:disabled="${guaEnabled}"
+                                           th:field="*{username}"
+                                           th:accesskey="#{screen.welcome.label.netid.accesskey}"
+                                           autocomplete="off"
+                                           onfocus="user_input_focus(this)"
+                                           onblur="user_input_blur(this)"
+                                           oninput="isShowClearBtn(this)"/>
+                                           <button onclick="clearUser(this)"  type="button" class="icon-delete" ></button>
+                                </div>
+                                <a class="btn btn-gray-delete hide">&times;</a>
+                            </section>
+            
+                            <section class="row">
+                                <div class="bar-input" >
+                                    <i class="icon icon-lock"></i>
+                                    <input class="required form-control"
+                                           placeholder="请输入密码"
+                                           data-necessary="true" reservation="密码"
+                                           type="password"
+                                           id="password"
+                                           size="25"
+                                           tabindex="2"
+                                           th:accesskey="#{screen.welcome.label.password.accesskey}"
+                                           th:field="*{password}"
+                                           autocomplete="off"
+                                           onfocus="lock_input_focus(this)"
+                                           onblur="lock_input_blur(this)"/>
+                                           
+                                    <a class="btn btn-gray-delete hide">&times;</a>
+                                </div>
+                            </section>
+            
+                            <section style="height: 20px;visibility:hidden" >
+                                <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
+                                <input type="hidden" name="_eventId" value="submit"/>
+                                <input type="hidden" name="geolocation"/>
+                                <div class="bar-option" style="position:relative">
+                                    <span class="btn1"><input type="checkbox">记住密码</span> 
+                                    <a class="btn2">忘记密码？</a>
+                                </div>
+                                <div th:if="${#fields.hasErrors('*')}" style="color: red;">
+                                    <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"/>
+                                </div>
+                            </section>
+                        </div>
+            
+                        <div class="footer">
+                            <input id="logining" class="btn btn-submit btn-block "
+                                   name="submit"
+                                   accesskey="l" style="border: none;"
+                                   value="登录"
+                                   tabindex="6"
+                                   type="submit"
+                                   />
+                        </div>
+                    </form>
+                </div>
+            </div>
     </div>
+
+</div>
+<div class="copy-rights">
+    <div class="crcontent">
+    松江区司法局 Copyright © 2019
+    </div>
+</div>
+
+
 </body>
 <script>
     // 用户名输入框获得焦点时改变小人的颜色、输入框不为空时显示清除按钮
 function user_input_focus(a){
     document.getElementsByClassName('icon-user')[0].className = 'icon icon-user-focus';
-    if(document.getElementsByClassName('form-control')[0].value != '' ) {
-        document.getElementsByClassName('btn-gray-delete')[0].style.display = 'inline';
+    if(document.getElementsByClassName('form-control')[0].value != '') {
+        document.getElementsByClassName('icon-delete')[0].style.display = 'inline';
     } else {
-        document.getElementsByClassName('btn-gray-delete')[0].style.display = 'none';
+        document.getElementsByClassName('icon-delete')[0].style.display = 'none';
     }
     
 }
 
-// 判断是否显示清除按钮、改变登陆按钮样式
+// 判断是否显示清除按钮
 function isShowClearBtn(){
-    
     if(document.getElementsByClassName('form-control')[0].value != '') {
-        document.getElementsByClassName('btn-gray-delete')[0].style.display = 'inline';
-        if (document.getElementsByClassName('form-control')[1].value != '') {
-            document.getElementById("logining").className="readyCommit"           
-        } else {          
-            document.getElementById("logining").className="btn btn-submit btn-block"
-        }
+        document.getElementsByClassName('icon-delete')[0].style.display = 'inline';
     } else {
-        document.getElementsByClassName('btn-gray-delete')[0].style.display = 'none';        
-        document.getElementById("logining").className="btn btn-submit btn-block"
+        document.getElementsByClassName('icon-delete')[0].style.display = 'none';
     }
 }
 // 点击清除按钮清除输入框内容
 function clearUser(a){
-    console.log('tets')
     document.getElementsByClassName('form-control')[0].value = '';
 }
 
@@ -140,8 +133,9 @@ function clearUser(a){
 function user_input_blur(b){   
     document.getElementsByClassName('icon-user-focus')[0].className = 'icon icon-user'
     setTimeout(function() {  //进行延时处理，时间单位为千分之一秒
-        document.getElementsByClassName('btn-gray-delete')[0].style.display = 'none';
-    }, 200)  
+        console.log('tertae')
+        document.getElementsByClassName('icon-delete')[0].style.display = 'none';
+    }, 120)  
 }
 
 // 密码输入框获得焦点时改变小锁的颜色
@@ -149,10 +143,11 @@ function lock_input_focus(a){
     document.getElementsByClassName('icon-lock')[0].className = 'icon icon-lock-focus'
 }
 
-// 密码输入框失去焦点时改变小锁的颜色
+// 密码输入框获得焦点时改变小锁的颜色
 function lock_input_blur(b){
     document.getElementsByClassName('icon-lock-focus')[0].className = 'icon icon-lock'
 }
+
 
 </script>
 </html>
