@@ -1,0 +1,228 @@
+body, html{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+.bgContainer {
+  width: 100%;
+  background: url('../images/xuhuiSFXZDSJMH/pic_bg.png') no-repeat;
+  background-size: cover; 
+  height: 100%;
+  min-width: 1366px;
+  min-height: 768px;
+}
+.bgMask {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  min-width: 1366px;
+  min-height: 768px;
+  background:rgba(3,4,16,0.2);
+}
+.bgContainer .title {
+  margin-top: 34px;
+  margin-left: 32px;
+  background: url('../images/xuhuiSFXZDSJMH/pic_title.png') no-repeat;
+  width: 340px;
+  height: 30px;
+}
+
+.bgContainer .content {
+  width: 380px;
+  align-self: center;
+  background: rgba(27,31,49,0.8);
+  box-shadow :0px 8px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bgContainer .content .formName {
+  font-size: 18px;
+  font-family: MicrosoftYaHei;
+  font-weight: bold;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  padding-right: 20px;
+  margin-top: 24px;
+}
+.bgContainer .content .formName::after {
+  content:'';
+  display: block;
+  height: 1px;
+  width: 24px;
+  border: 1px rgba(90,104,136,1) solid;
+  border-radius: 2px;
+  background: rgba(90,104,136,1);
+  margin-left: calc(50% - 13px);
+  margin-top: 8px;
+}
+.bgContainer .content .login-frame {
+  margin-top: 20px;
+}
+.bgContainer .content .login-frame .row {
+  height: 41px;
+  background: rgba(66,68,84,1);
+  border-radius: 2px;
+  margin: 20px 0;
+  width: 300px;
+}
+.bgContainer .content .login-frame .row .form-control {
+  line-height: 40px;
+}
+.bgContainer .content .login-frame .row .btn-gray-delete {
+  cursor: pointer;
+}
+.bgContainer .content .login-frame .row:hover {
+  box-shadow: 0px 0px 2px 0px rgba(240, 236, 236, 0.8);
+}
+.bgContainer .content .login-frame .row .bar-input {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.bgContainer .content .login-frame .row .bar-input .btn-gray-delete {
+  display: none;
+}
+.bgContainer .content .login-frame .row .icon {
+  width: 15px;
+  height: 16px;
+  margin: 0 10px;
+}
+
+.bgContainer .content .login-frame .bar-option {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(68,68,68,0.3);
+}
+.bgContainer .content .login-frame .bar-option .btn1 {
+  display: flex;
+  align-items: center;
+}
+.bgContainer .content .login-frame .bar-option .btn2 {
+  cursor: pointer;
+  color: rgba(233,233,233,0.3);
+}
+#remberPwd {
+  cursor: pointer;
+}
+#remberPwd + label{
+  cursor: pointer;
+  height: 21px;
+  color: rgba(233,233,233,0.3);
+}
+
+#remberPwd {
+  display: none;
+}
+#remberPwd + label .customCheckBox {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(66,68,84,1);
+  margin: 0 5px;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  margin: 0
+}
+#remberPwd + label .customCheckBox .mark {
+  border-left: 2px white solid ;
+  border-bottom: 2px white solid ;
+  width: 7px;
+  height: 3px;
+  transform: rotate(-45deg);
+  margin-top: 2px;
+  margin-left: 2px;
+  display: none;
+}
+#remberPwd:checked + label .customCheckBox .mark {
+  display: block;
+}
+#remberPwd:checked + label .customCheckBox {
+  background: #1890FF;
+  border: 1px solid #1890FF;
+}
+.bgContainer .content .login-frame .row .icon-user {
+  background: url('../images/xuhuiSFXZDSJMH/icon_user.png') no-repeat;
+}
+.bgContainer .content .login-frame .row .icon-lock {
+  background: url('../images/xuhuiSFXZDSJMH/icon_lock.png') no-repeat;
+}
+.bgContainer .content .login-frame .row .icon-user-focus {
+  background: url('../images/xuhuiSFXZDSJMH/icon_user_choose.png') no-repeat;
+}
+.bgContainer .content .login-frame .row .icon-lock-focus {
+  background: url('../images/xuhuiSFXZDSJMH/icon_lock_choose.png') no-repeat;
+}
+
+.bgContainer .content .login-frame .row input {
+  border: 0;
+  background: transparent;
+  flex: 1;
+  color: #fff;
+}
+.bgContainer .content .login-frame .row input:focus {
+  color: #fff !important;
+}
+.bgContainer .content .login-frame .row a {
+  background: transparent;
+  color: #666666;
+  margin-right: 10px;
+}
+.bgContainer .content .login-frame .row input:focus {
+  outline: none;
+  color: #666666;
+}
+.bgContainer .content .login-frame .row input::-webkit-input-placeholder {
+  font-size: 16px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(192,192,192,0.8);
+}
+.bgContainer .content .footer input{
+
+  width: 300px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255,255,255,1);
+  background: rgba(115,176,234,1);
+  border-radius: 2px;
+}
+.bgContainer .content .footer{
+  padding-top: 43px;
+  padding-bottom: 31px;
+}
+.bgContainer .content .footer .login {
+  cursor: not-allowed;
+}
+.bgContainer .content .footer .btn-submit{
+  pointer-events: none;
+  
+}
+.bgContainer .copy-rights {
+  height: 30px;
+  text-align: center;
+  font-size:12px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255,255,255,1);
+  opacity: 0.6;
+}
+
+.bgContainer .content .footer .readyCommit {
+  background: rgba(24,144,225,1) !important;
+}
+.bgContainer .content .footer .readyCommit:hover {
+  background: rgba(24,144,225,0.9) !important;
+  cursor: pointer;
+}
